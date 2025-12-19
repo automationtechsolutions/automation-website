@@ -414,3 +414,30 @@ footer {
     .hero h2 { font-size: 32px; }
     .hero p { font-size: 16px; }
 }
+/* Contact button */
+nav a.btn-contact {
+    padding: 10px 18px;
+    background-color: #007bff;
+    color: #fff !important;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+nav a.btn-contact:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Ensure button remains visible in mobile */
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a.btn-contact {
+        display: block;
+        text-align: center;
+    }
+}
