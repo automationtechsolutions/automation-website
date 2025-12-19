@@ -18,18 +18,26 @@ body {
 }
 
 /* ===== Header ===== */
+/* Default (desktop) - keep sticky if you want */
 header {
     position: sticky;
     top: 0;
-    background: rgba(10, 37, 64, 0.95);
     z-index: 999;
+    background: rgba(10, 37, 64, 0.95);
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: background 0.3s ease;
 }
+
+/* Mobile (scroll with page) */
+@media (max-width: 768px) {
+    header {
+        position: relative; /* removes sticky */
+        box-shadow: none;    /* optional: remove shadow */
+    }
+}
+
 
 header h1 {
     color: #fff;
