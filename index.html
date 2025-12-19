@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automation Tech Solutions</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        /* ===== Hero Animations ===== */
+        .hero {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #000;
+            /* black text for light background */
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        .hero-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: rgba(27, 159, 255, 0.6);
+            border-radius: 50%;
+            animation: floatParticles 10s linear infinite;
+        }
+
+        .particle:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-duration: 12s;
+        }
+
+        .particle:nth-child(2) {
+            top: 50%;
+            left: 80%;
+            animation-duration: 9s;
+        }
+
+        .particle:nth-child(3) {
+            top: 70%;
+            left: 40%;
+            animation-duration: 14s;
+        }
+
+        @keyframes floatParticles {
+            0% {
+                transform: translate(0, 0);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: translate(50px, -50px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 0.5;
+            }
+        }
+
+        .orbit {
+            position: absolute;
+            border: 1px dashed rgba(27, 159, 255, 0.4);
+            border-radius: 50%;
+            animation: rotateOrbit 20s linear infinite;
+        }
+
+        .orbit1 {
+            width: 150px;
+            height: 150px;
+            top: 20%;
+            left: 30%;
+        }
+
+        .orbit2 {
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+        }
+
+        .orbit3 {
+            width: 100px;
+            height: 100px;
+            top: 70%;
+            left: 70%;
+        }
+
+        @keyframes rotateOrbit {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hero .container.hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h2,
+        .hero p,
+        .btn-primary {
+            animation: floatUp 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0px);
+            }
+
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* ===== Header Enhancements ===== */
+        header {
+            background: #0a2540;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            transition: background 0.3s;
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        nav a {
+            color: #fff;
+            margin-left: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #1b9fff;
+            transform: scale(1.05);
+        }
+
+        nav .btn {
+            background: #1b9fff;
+            padding: 8px 18px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        nav .btn:hover {
+            background: #0f7ed1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container header-container">
+            <h1>Automation Tech Solutions</h1>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#industries">Industries</a>
+                <a href="#use-cases">Use Cases</a>
+                <a href="#approach">Approach</a>
+                <a href="#contact" class="btn">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" style="background-image:url('assets/images/hero-bg.jpg');">
+        <!-- Hero animations -->
+        <div class="hero-animation">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="orbit orbit1"></div>
+            <div class="orbit orbit2"></div>
+            <div class="orbit orbit3"></div>
+        </div>
+
+        <div class="container hero-content">
+            <h2 data-aos="fade-up">Smarter Automation.<br />Better Business Outcomes.</h2>
+            <p data-aos="fade-up" data-aos-delay="200">
+                We help organizations streamline operations using AI-driven automation
+                and RPA solutions that reduce cost, improve accuracy, and scale growth.
+            </p>
+            <a href="#contact" class="btn-primary" data-aos="fade-up" data-aos-delay="400">Book a Demo</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container" data-aos="fade-right">
+            <h3>About Us</h3>
+            <p>
+                Automation Tech Solutions is a technology-driven company delivering
+                intelligent automation solutions to businesses across industries.
+                We combine AI, RPA, and analytics to eliminate manual effort and
+                unlock operational efficiency.
+            </p>
+        </div>
+    </section>
+
+    <section id="services" class="section light">
+        <div class="container">
+            <h3 data-aos="fade-up">Our Services</h3>
+            <div class="grid">
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="assets/images/process-automation.png" alt="Process Automation" />
+                    <h4>Process Automation</h4>
+                    <p>Automate repetitive tasks to increase speed, consistency, and accuracy.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="assets/images/rpa-consulting.png" alt="RPA Consulting" />
+                    <h4>RPA Consulting</h4>
+                    <p>Identify high-impact automation opportunities and build scalable solutions.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="assets/images/managed-automation.png" alt="Managed Automation" />
+                    <h4>Managed Automation</h4>
+                    <p>Ongoing monitoring, maintenance, and optimization of automation bots.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="400">
+                    <img src="assets/images/assessment.png" alt="Automation Assessment" />
+                    <h4>Automation Assessment</h4>
+                    <p>Evaluate workflows to determine automation readiness and ROI.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="500">
+                    <img src="assets/images/analytics.png" alt="Optimization & Analytics" />
+                    <h4>Optimization & Analytics</h4>
+                    <p>Improve performance with insights, reporting, and continuous improvement.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="1000">
+                    <img src="assets/images/support.png" alt="24/7 Support" />
+                    <h4>24/7 Support</h4>
+                    <p>Ensure continuous monitoring, maintenance, and support for uninterrupted operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="industries" class="section">
+        <div class="container" data-aos="fade-left">
+            <h3>Industries We Serve</h3>
+            <div class="grid industries-grid">
+                <div class="industry-card"><img src="assets/images/healthcare.png" alt="Healthcare" />
+                    <p>Healthcare</p>
+                </div>
+                <div class="industry-card"><img src="assets/images/finance.png" alt="Finance" />
+                    <p>Banking & Finance</p>
+                </div>
+                <div class="industry-card"><img src="assets/images/insurance.png" alt="Insurance" />
+                    <p>Insurance</p>
+                </div>
+                <div class="industry-card"><img src="assets/images/retail.png" alt="Retail" />
+                    <p>Retail & E-Commerce</p>
+                </div>
+                <div class="industry-card"><img src="assets/images/hr.png" alt="HR" />
+                    <p>HR & Back Office</p>
+                </div>
+                <div class="industry-card"><img src="assets/images/support.png" alt="Customer Support" />
+                    <p>Customer Support</p>
+                </div>
+                <div class="industry-card"><img src="assets/images/real-estate.png" alt="Real Estate" />
+                    <p><strong>Real Estate</strong></p>
+                </div>
+            </div>
+        </div>
+    </section> <!-- ===== Use Cases Section ===== -->
+    <section id="use-cases" class="section light">
+        <div class="container" data-aos="fade-up">
+            <h3>Use Cases: Automation Across Industries</h3> <!-- Healthcare -->
+            <div class="use-case">
+                <h4>Healthcare</h4>
+                <div class="use-case-item">
+                    <h5>Data Entry & Management</h5>
+                    <ul>
+                        <li>Streamlines processes for managing patient records, insurance data, and appointment
+                            scheduling.</li>
+                        <li>Reduces human error, enhances data accuracy, and improves efficiency.</li>
+                    </ul>
+                </div>
+                <div class="use-case-item">
+                    <h5>Patient Monitoring and Communication</h5>
+                    <ul>
+                        <li>Automates health status monitoring and sends alerts when parameters deviate from norms.</li>
+                        <li>Enhances care quality and enables timely interventions.</li>
+                    </ul>
+                </div>
+                <div class="use-case-item">
+                    <h5>Claims Processing</h5>
+                    <p>Speeds up reimbursement processes, reduces errors, and cuts operational costs.</p>
+                </div>
+                <div class="use-case-item">
+                    <h5>Medication Intake Management</h5>
+                    <p>Sends reminders for medication schedules, refills, and dosage guidelines. Boosts adherence and
+                        improves patient outcomes.</p>
+                </div>
+                <div class="use-case-item">
+                    <h5>Appointment Scheduling</h5>
+                    <p>Automates scheduling tasks, including reminders, confirmations, and cancellations. Saves time for
+                        patients and providers.</p>
+                </div>
+                <div class="use-case-item">
+                    <h5>Post-Acute Care</h5>
+                    <ul>
+                        <li>Referral Intake Automation: Simplifies referral reviews and data collection.</li>
+                        <li>Review Eligibility Alerts: Provides real-time notifications for eligibility determinations.
+                        </li>
+                        <li>Order Tracking: Automates tracking of patient orders with timely updates.</li>
+                        <li>Claim Demonstration Reviews: Streamlines review process for claims demonstration.</li>
+                        <li>Authorization: Automates requests and approvals for compliance and efficiency.</li>
+                        <li>ETL (Extract, Transform, Load): Facilitates seamless data submission, transformation, and
+                            loading across healthcare platforms.</li>
+                    </ul>
+                </div>
+                <div class="use-case-item">
+                    <h5>Integration Capabilities</h5>
+                    <ul>
+                        <li>Citrix Applications</li>
+                        <li>EMR (Electronic Medical Records)</li>
+                        <li>EHR (Electronic Health Records)</li>
+                        <li>Web Applications</li>
+                        <li>Desktop/Legacy Applications</li>
+                        <li>Email/Outlook</li>
+                        <li>Excel</li>
+                        <li>Windows Folders</li>
+                    </ul>
+                </div>
+            </div> <!-- General RPA Use Cases -->
+            <div class="use-case general-rpa">
+                <h4>General RPA Use Cases</h4>
+                <div class="rpa-grid">
+                    <div class="rpa-card">
+                        <h5>Email Automation</h5>
+                        <p>Manage inboxes, sort emails, send automated responses, and archive messages.</p>
+                    </div>
+                    <div class="rpa-card">
+                        <h5>PDF Automation</h5>
+                        <p>Process invoices, extract data, and automate document generation and sharing.</p>
+                    </div>
+                    <div class="rpa-card">
+                        <h5>Payroll Processing</h5>
+                        <p>Automate timesheet updates, attendance tracking, and payslip generation.</p>
+                    </div>
+                    <div class="rpa-card">
+                        <h5>ETL (Extract, Transform, Load)</h5>
+                        <p>Streamline data migration, consolidation, and transformation across systems.</p>
+                    </div>
+                    <div class="rpa-card">
+                        <h5>Customer Onboarding</h5>
+                        <p>Automate account creation, documentation verification, and welcome communication for new
+                            clients.</p>
+                    </div>
+                    <div class="rpa-card">
+                        <h5>Invoice Processing</h5>
+                        <p>Automatically extract data, validate, and post invoices into accounting systems.</p>
+                    </div>
+                    <div class="rpa-card">
+                        <h5>Report Generation</h5>
+                        <p>Create and distribute recurring reports without manual intervention, saving time and errors.
+                        </p>
+                    </div>
+                    <div class="rpa-card">
+                        <h5>Inventory Management</h5>
+                        <p>Track stock levels, automate restocking alerts, and update records across systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> <!-- ===== End Use Cases Section ===== -->
+    <section id="approach" class="section light">
+        <div class="container" data-aos="fade-right">
+            <h3>Our Approach</h3>
+            <ol class="steps">
+                <li>Discovery & Analysis</li>
+                <li>Solution Design</li>
+                <li>Automation Development</li>
+                <li>Deployment</li>
+                <li>Monitoring & Optimization</li>
+            </ol>
+        </div>
+    </section>
+    <section id="contact" class="section">
+        <div class="container" data-aos="fade-up">
+            <h3>Contact Us</h3>
+            <p>Ready to automate your business? Let’s talk.</p>
+            <form> <input type="text" placeholder="Your Name" required /> <input type="email"
+                    placeholder="Email Address" required /> <textarea
+                    placeholder="Tell us about your requirements"></textarea> <button type="submit"
+                    class="btn-primary">Send Message</button> </form>
+        </div>
+    </section>
+    <footer>
+        <p>© 2025 Automation Tech Solutions. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script> AOS.init({ duration: 1200 }); </script>
+    <script>
+        AOS.init({ duration: 1200 });
+    </script>
+
+</body>
+
+</html>
